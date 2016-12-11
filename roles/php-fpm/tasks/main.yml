@@ -2,16 +2,17 @@
 - name: Install php-fpm and deps
   yum: name={{ item }} state=present
   with_items:
-    - php
-    - php-fpm
-    - php-enchant
-    - php-IDNA_Convert
-    - php-mbstring
-    - php-mysql
-    - php-PHPMailer
-    - php-process
-    - php-simplepie
-    - php-xml
+    - php70
+    - php70-cli
+    - php70-fpm
+    - php70-gd
+    - php70-json
+    - php70-mbstring
+    - php70-mysqlnd
+    - php70-opcache
+    - php70-pdo
+    - php70-pecl-imagick
+    - php70-xml
 
 - name: Disable default pool
   command: mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled creates=/etc/php-fpm.d/www.disabled
