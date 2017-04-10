@@ -1,3 +1,4 @@
 ---
 - name: Install Mysql package
   yum: name=mysql state=present
+  sudo: True
