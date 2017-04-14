@@ -33,6 +33,16 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/** Whether update menu. */
+define('ETHNOLOGIST_MENU_CREATE_ONLY', true);
+
+/** Facebook API ID */
+define('ETHNOLOGIST_FACEBOOK_API_ID', '{{ wp_ethnologist_facebook_api_id }}');
+
+/** Disable WPML compatibility */
+define('PLL_WPML_COMPAT', false);
+
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -42,8 +52,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-
-{{ wp_salt }}
+define('AUTH_KEY',         '{{ wp_auth_key }}');
+define('SECURE_AUTH_KEY',  '{{ wp_secure_auth_key }}');
+define('LOGGED_IN_KEY',    '{{ wp_logged_in_key }}');
+define('NONCE_KEY',        '{{ wp_nonce_key }}');
+define('AUTH_SALT',        '{{ wp_auth_salt }}');
+define('SECURE_AUTH_SALT', '{{ wp_secure_auth_salt }}');
+define('LOGGED_IN_SALT',   '{{ wp_logged_in_salt }}');
+define('NONCE_SALT',       '{{ wp_nonce_salt }}');
 
 /**#@-*/
 
@@ -56,16 +72,6 @@ define('DB_COLLATE', '');
 $table_prefix  = 'wp_';
 
 /**
- * WordPress Localized Language, defaults to English.
- *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
- */
-define('WPLANG', '');
-
-/**
  * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.
@@ -74,11 +80,16 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
-/** Disable Automatic Updates Completely */
-define( 'AUTOMATIC_UPDATER_DISABLED', {{auto_up_disable}} );
+/** Multisite */
+define( 'WP_ALLOW_MULTISITE', true );
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', true);
+define('DOMAIN_CURRENT_SITE', '{{ wp_domain_current_site }}');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
 
-/** Define AUTOMATIC Updates for Components. */
-define( 'WP_AUTO_UPDATE_CORE', {{core_update_level}} );
+define( 'SUNRISE', 'on' );
 
 /* That's all, stop editing! Happy blogging. */
 
