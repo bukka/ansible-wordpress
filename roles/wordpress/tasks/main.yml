@@ -1,4 +1,8 @@
 ---
+- name: Import WordPress secret variable file
+  include_vars: "main.yml"
+  no_log: true
+
 - name: Get WordPress
   repo: 'https://github.com/bukka/WordPress.git'
   dest: /var/www/wordpress/
