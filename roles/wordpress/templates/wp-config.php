@@ -33,15 +33,9 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-/** Whether update menu. */
-define('ETHNOLOGIST_MENU_CREATE_ONLY', true);
-
-/** Facebook API ID */
-define('ETHNOLOGIST_FACEBOOK_API_ID', '{{ wp_ethnologist_facebook_api_id }}');
-
-/** Disable WPML compatibility */
-define('PLL_WPML_COMPAT', false);
-
+{% for for name, value in wp_custom_options.iteritems() %}
+define('{{ name }}', {{ value }});
+{% endfor %}
 
 /**#@+
  * Authentication Unique Keys and Salts.
