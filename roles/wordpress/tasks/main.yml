@@ -4,9 +4,10 @@
   no_log: true
 
 - name: Get WordPress
-  repo: 'https://github.com/bukka/WordPress.git'
-  dest: /var/www/wordpress/
-  version: bk
+  git:
+    repo: 'https://github.com/bukka/WordPress.git'
+    dest: /var/www/wordpress/
+    version: bk
 
 - name: Add group "wordpress"
   group: name=wordpress
