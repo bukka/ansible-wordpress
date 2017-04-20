@@ -26,7 +26,6 @@
 
 - name: Change ownership of WordPress installation
   file: path=/var/www/wordpress/ owner=wordpress group=wordpress state=directory recurse=yes setype=httpd_sys_content_t
-  sudo: True
 
 - name: Start php-fpm Service
   service: name=php-fpm state=started enabled=yes

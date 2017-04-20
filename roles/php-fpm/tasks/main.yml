@@ -13,14 +13,11 @@
     - php70-pdo
     - php70-pecl-imagick
     - php70-xml
-  sudo: True
 
 - name: Disable default pool
   command: mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled creates=/etc/php-fpm.d/www.disabled
   notify: restart php-fpm
-  sudo: True
 
 - name: Copy php-fpm configuration
   template: src=wordpress.conf dest=/etc/php-fpm.d/
   notify: restart php-fpm
-  sudo: True

@@ -1,7 +1,6 @@
 ---
 - name: Install Mysql package
   yum: name={{ item }} state=present
-  sudo: True
   with_items:
     mysql
     mysql-server
