@@ -1,6 +1,9 @@
 ---
 - name: Install Mysql package
-  yum: name=mysql-server state=present
+  yum: name={{ item }} state=present
+  with_items:
+    - mysql-server
+    - MySQL-python27
 
 - name: Create Mysql configuration file
   template: src=my.cnf.j2 dest=/etc/my.cnf
