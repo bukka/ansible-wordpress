@@ -33,7 +33,7 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-{% for for name, value in wp_custom_options.iteritems() %}
+{% for name, value in wp_custom_options.iteritems() %}
 define('{{ name }}', {{ value }});
 {% endfor %}
 
