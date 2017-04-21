@@ -3,6 +3,9 @@
   include_vars: "main.yml"
   no_log: true
 
+- name: Install Git package
+  yum: name=git state=present
+
 - name: Get WordPress
   git:
     repo: 'https://github.com/bukka/WordPress.git'
